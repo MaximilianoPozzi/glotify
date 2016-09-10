@@ -1,7 +1,7 @@
 export function resultsController(ApiService, $location){
 	
 
-	ApiService.	queryArtist(localStorage.getItem("artistName")).then(function(artists){
+	ApiService.	queryArtist(localStorage.getItem("glotifyArtistName")).then(function(artists){
 		this.artists=artists;
 	}.bind(this), function(error){
 		console.log(error);
@@ -12,7 +12,7 @@ export function resultsController(ApiService, $location){
 	}
 
     function choseAnArtist(chosenId){
-    	localStorage.setItem("artistId", chosenId);
+    	localStorage.setItem("glotifyArtistId", chosenId);
     }
 
 	this.goTo = goTo;

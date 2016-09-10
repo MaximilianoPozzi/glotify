@@ -3,7 +3,7 @@
   
   <ul>
     <li ng-repeat="track in albumDetailCtrl.tracks">
-      <a>{{track.name}}</a>
+      <a href="javascript:void(0);" ng-click="albumDetailCtrl.setFavorite(track)">{{track.name}}</a>
     </li>
   </ul>
 

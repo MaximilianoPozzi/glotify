@@ -1,7 +1,7 @@
 export function homeController($location){
 
     function saveArtistName(){
-    	localStorage.setItem('artistName', document.getElementById("artist-name").value);
+    	localStorage.setItem('glotifyArtistName', document.getElementById("artist-name").value);
     }
 
     function searchArtist(url){
