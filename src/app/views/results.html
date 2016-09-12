@@ -1,16 +1,7 @@
 <div class="consigna__container">
   <div ng-repeat="artist in resultsCtrl.artists">
     <img ng-src="{{artist.images[0].url}}" alt="Imagen no disponible"/>
-    <a ng-click="resultsCtrl.choseAnArtist(artist.id)" href="/band-albums">{{artist.name}}</a>
+    <a href="/band-albums_get={{artist.id}}">{{artist.name}}</a>
   </div>
   <button ng-click="resultsCtrl.goTo('/')">Go back</button>
-</div>
-<div>
-  <h2>ACA TIENEN QUE CARGAR UNA GRILLA CON LOS ARTISTAS QUE APARECIERON COMO RESULTADO DE LA BUSQUEDA ANTERIOR</h2>
-  <img src="https://i.scdn.co/image/445ffa41207f321883fb01f406165801c7f41ef0" alt="">
-  <h4>Cyndi Lauper</h4>
-  <img src="https://i.scdn.co/image/6b86adfb6637e08f76390266b617120e95ad16c0" alt="">
-  <h4>Cindy Bradley</h4>
-  <img src="https://i.scdn.co/image/82633230315fb6b7cc7f4b573bc9e8edf0da69da" alt="">
-  <h4>Cindy Bullens</h4>
 </div>

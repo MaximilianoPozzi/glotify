@@ -2,9 +2,8 @@
   
   <div ng-repeat="album in bandAlbumsCtrl.albums">
     <img ng-src="{{album.images[0].url}}" alt="Imagen no disponible"/>
-    <a ng-click="bandAlbumsCtrl.choseAnAlbum(album.id)" href="/album-detail">{{album.name}}</a>
+    <a href="/album-detail_query={{album.id}}">{{album.name}}</a>
   </div>
 
-  <button ng-click="bandAlbumsCtrl.goTo('/results')">Go Back</button>
 
 </div>

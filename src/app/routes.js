@@ -14,19 +14,19 @@ export function routes($routeProvider, $locationProvider) {
             controllerAs: 'homeCtrl'
         })
 
-    	.when('/album-detail', {
+    	.when('/album-detail_query=:albumId', {
     		templateUrl: 'app/views/album-detail.html',
     		controller:'albumDetailController',
     		controllerAs:'albumDetailCtrl'
     	})
 
-    	.when('/band-albums', {
+    	.when('/band-albums_get=:artistId', {
     		templateUrl: 'app/views/band-albums.html',
     		controller: 'bandAlbumsController',
     		controllerAs: 'bandAlbumsCtrl'
     	})
 
-    	.when('/results', {
+    	.when('/results_query=:artistName', {
     		templateUrl: 'app/views/results.html',
     		controller: 'resultsController',
     		controllerAs: 'resultsCtrl'

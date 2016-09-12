@@ -1,3 +1,6 @@
-<div>
-	
-</div>
+<li>
+  <a ng-click="changeDisplay(moreInfo)" href="javascript:void(0);">{{trackName}}</a>
+  <a ng-show="moreInfo">{{albumName}}</a>
+  <button ng-show="moreInfo" ng-click="removeFavorite(trackId)">Remove from favorites</button>
+  <p>{{trackId}}</p>
+</li>

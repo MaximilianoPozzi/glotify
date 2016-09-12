@@ -4,7 +4,7 @@ import {homeController} from './controllers';
 import {resultsController} from './controllers';
 import {albumDetailController} from './controllers';
 import {bandAlbumsController} from './controllers';
-
+import {favoriteDirective} from './directives';
 
 
 angular.module('App', ['ngRoute'])
@@ -13,4 +13,5 @@ angular.module('App', ['ngRoute'])
     .controller('homeController', homeController)
     .controller('resultsController', resultsController)
     .controller('albumDetailController', albumDetailController)
-    .controller('bandAlbumsController', bandAlbumsController);
+    .controller('bandAlbumsController', bandAlbumsController)
+    .directive('favorite', favoriteDirective);
