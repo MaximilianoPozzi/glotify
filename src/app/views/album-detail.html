@@ -1,12 +1,21 @@
 <div>
-  <img ng-src="{{albumDetailCtrl.image}}" alt="Imagen no disponible">
+
+  <img class="album-detail-image" ng-src="{{AlbumDetailCtrl.image}}" alt="Imagen no disponible">
   
+  <div class="album-tracks-order-options">
+    <label for="album-tracks-order">Ordenar canciones por:</label>
+    <select name="album-tracks-order" ng-model="albumDetailOrder">
+      <option value="-duration_ms">Más largos</option>
+      <option value="duration_ms">Más cortos</option>
+    </select>
+  </div>
+
   <ul>
-    <li ng-repeat="track in albumDetailCtrl.tracks">
-      <a href="javascript:void(0);" ng-click="albumDetailCtrl.setFavorite(track)">{{track.name}}</a>
+    <li class="album-detail-tracks" ng-repeat="track in AlbumDetailCtrl.tracks | orderBy:albumDetailOrder">
+      <a href="javascript:void(0);" ng-click="AlbumDetailCtrl.setFavorite(track)">{{track.name}}</a>
     </li>
   </ul>
 
-  <button ng-click="albumDetailCtrl.goTo('/')">Start a new search</button>
+  <button ng-click="AlbumDetailCtrl.goTo('/')">Start a new search</button>
 
 </div>

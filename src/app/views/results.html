@@ -1,7 +1,16 @@
 <div class="consigna__container">
-  <div ng-repeat="artist in resultsCtrl.artists">
-    <img ng-src="{{artist.images[0].url}}" alt="Imagen no disponible"/>
-    <a href="/band-albums_get={{artist.id}}">{{artist.name}}</a>
+
+  <label for="artists-order">Ordenar resultados por:</label>
+  <select name="artists-order" ng-model="artistsOrderCriteria">
+    <option value="-popularity">Más populares</option>
+    <option value="-followers.total">Con más seguidores</option>
+    <option value="name">Por orden alfabético</option>
+    <option value="-name">Por orden alfabético inverso</option>
+  </select>
+
+  <div class="artist-results" ng-repeat="artist in ResultsCtrl.artists | orderBy:artistsOrderCriteria">
+    <img class="artist-image" ng-src="{{artist.images[0].url}}" alt="Imagen no disponible"/>
+    <a class= "artist-name" href="/band-albums_get={{artist.id}}">{{artist.name}}</a>
   </div>
-  <button ng-click="resultsCtrl.goTo('/')">Go back</button>
+  <button ng-click="ResultsCtrl.goTo('/')">Go back</button>
 </div>

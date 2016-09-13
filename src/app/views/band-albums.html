@@ -1,8 +1,14 @@
 <div class="band-detail-container" >
   
-  <div ng-repeat="album in bandAlbumsCtrl.albums">
-    <img ng-src="{{album.images[0].url}}" alt="Imagen no disponible"/>
-    <a href="/album-detail_query={{album.id}}">{{album.name}}</a>
+<label for="band-albums-order">Mostrar álbumes por:</label>
+<select name="band-albums-order" ng-model="albumsOrderCriteria">
+	<option value="name">Por orden alfabético</option>
+	<option value="-name">Por orden alfabético inverso</option>
+</select>
+
+  <div class="band-albums" ng-repeat="album in BandAlbumsCtrl.albums | orderBy:albumsOrderCriteria">
+    <img class="band-albums-image" ng-src="{{album.images[0].url}}" alt="Imagen no disponible"/>
+    <a class= "band-albums-name" href="/album-detail_query={{album.id}}">{{album.name}}</a>
   </div>
 
 

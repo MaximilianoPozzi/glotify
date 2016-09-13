@@ -1,4 +1,4 @@
-export function bandAlbumsController(ApiService, $location, $routeParams){
+export function BandAlbumsController(ApiService, $location, $routeParams){
 
 	function goTo(url){
 		$location.path(url);

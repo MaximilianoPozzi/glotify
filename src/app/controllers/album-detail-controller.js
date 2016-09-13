@@ -1,14 +1,14 @@
-export function albumDetailController(ApiService, $location, $routeParams){
+export function AlbumDetailController(ApiService, $location, $routeParams, LocalStorageService){
 	
     function goTo(url){
     	$location.path(url);
     }
 
     function setFavorite(track){
-    	if (!localStorage.getItem("glotifyFavoriteSongs")) {
-    		localStorage.setItem("glotifyFavoriteSongs", JSON.stringify([track.id]));
+    	if (!LocalStorageService.getItem("glotifyFavoriteSongs")) {
+    		LocalStorageService.setItem("glotifyFavoriteSongs", JSON.stringify([track.id]));
     	} else {
-    		let favorites = JSON.parse(localStorage.getItem("glotifyFavoriteSongs"));
+    		let favorites = JSON.parse(LocalStorageService.getItem("glotifyFavoriteSongs"));
     		let trackAlreadyIncluded=false;
     		for (let i=0;i<favorites.length;i++){
     			if (track.id==favorites[i]){
@@ -18,7 +18,7 @@ export function albumDetailController(ApiService, $location, $routeParams){
     		}
     		if (!trackAlreadyIncluded){
   				favorites.push(track.id);
-    			localStorage.setItem("glotifyFavoriteSongs", JSON.stringify(favorites));
+    			LocalStorageService.setItem("glotifyFavoriteSongs", JSON.stringify(favorites));
     		}
     	}
     }

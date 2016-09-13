@@ -1,6 +1,7 @@
 <li>
-  <a ng-click="changeDisplay(moreInfo)" href="javascript:void(0);">{{trackName}}</a>
-  <a ng-show="moreInfo">{{albumName}}</a>
+  <a class= "favorite-name" ng-click="changeDisplay(moreInfo)" href="javascript:void(0);">{{trackName}}</a>
+  <a class= "favorite-details" ng-show="moreInfo" ng-href="/band-albums_get={{mainArtistId}}">{{mainArtistName}}</a> 
+  <a class= "favorite-details" ng-show="moreInfo" ng-href="/album-detail_query={{albumId}}">{{albumName}}</a>
+
   <button ng-show="moreInfo" ng-click="removeFavorite(trackId)">Remove from favorites</button>
-  <p>{{trackId}}</p>
 </li>

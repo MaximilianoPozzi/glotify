@@ -1,4 +1,4 @@
-export function resultsController(ApiService, $location, $routeParams){
+export function ResultsController(ApiService, $location, $routeParams){
 
 	ApiService.	queryArtist($routeParams.artistName).then(function(artists){
 		this.artists=artists;
@@ -9,6 +9,8 @@ export function resultsController(ApiService, $location, $routeParams){
 	function goTo(url){
 		$location.path(url);
 	}
+
+
 
 	this.goTo = goTo;
 };

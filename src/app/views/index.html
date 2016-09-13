@@ -1,15 +1,25 @@
 <div class="consigna__container">
-  <h2>LA PRIMERA PAGINA DEBE MOSTRAS UN BUSCADOR Y COMO SOMOS BUENOS, YA LES DEJAMOS EL INPUT</h2>
-  <input type="text" id="artist-name"/>
-  <button ng-click="homeCtrl.searchArtist()">Buscar</button>
-  <h3>FAVORITOS</h3>
+  <h2>¡Bienvenido a Glotify! Ingresa el nombre del artista que deseas buscar</h2>
   
+  <form ng-submit="HomeCtrl.searchArtist()">
+    <input type="text" id="artist-name"/>
+    <input type="submit" value="Buscar"/>
+  </form>
+
+  <h3>FAVORITOS</h3>
   <ul>
     <favorite
-      ng-repeat = "track in homeCtrl.tracks"
+      tracks = "HomeCtrl.tracks"
+      ng-repeat = "track in HomeCtrl.tracks"
       track-name = "track.name"
+      main-artist-name = "track.artists[0].name"
+      main-artist-id = "track.artists[0].id"
       album-name = "track.album.name"
+      album-id = "track.album.id"
       track-id = "track.id"
+      favorite-tracks-ids ="HomeCtrl.favoriteTracksIds"
+
+      
     />
   </ul>
 

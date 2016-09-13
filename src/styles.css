@@ -3,3 +3,41 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.favorite-name{
+  display: block;
+}
+
+.favorite-details{
+  display: block;
+}
+
+.artist-results{
+  margin: 20px;
+}
+
+.artist-image{
+  display: block;
+  width:80%;
+}
+
+.artist-name{
+  display: block;
+}
+
+.band-albums{
+  margin: 20px;
+}
+
+.band-albums-image{
+  display: block;
+  width:80%;
+}
+
+.band-albums-name{
+  display: block;
+}
+
+.album-detail-image{
+  width:80%;
+}
